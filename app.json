@@ -13,7 +13,8 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/b80ab0ea-8741-42df-b60e-03556f805f41"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -31,6 +32,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "extra": {
+      "base_url":"https://pokeapi.co/api/v2/pokemon/ditto"
     }
   }
 }
