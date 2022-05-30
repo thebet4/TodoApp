@@ -1,12 +1,22 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
+import { ActivityIndicator } from 'react-native';
+import useAppLoader from './src/Shared/hooks/useAppLoader';
+import loadFonts from './src/Shared/loadFonts';
+import { HomeScreen } from './src/Screens';
+import { Container } from './src/Ui/Containers';
 
-export default function App() {
+const App = () => {
+  const appLoaded = useAppLoader(loadFonts());
+
+  if (!appLoaded) {
+    return <ActivityIndicator />;
+  }
+
   return (
-    <View>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Container>
+      <HomeScreen />
+    </Container>
   );
-}
+};
+
+export default App;

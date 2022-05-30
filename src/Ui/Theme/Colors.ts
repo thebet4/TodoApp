@@ -1,13 +1,13 @@
 const Colors = {
   Primary: {
-    Dark: '#5F0FFA' as const,
-    Normal: '#6E0DFB' as const,
+    Dark: '#1A0C30' as const,
+    Normal: '#6A0DFB' as const,
     Light: '#AA00FF' as const,
   },
   Secondary: {
-    Dark: '#1A0C30' as const,
-    Normal: '#2E0D62' as const,
-    Light: '#690DF8' as const,
+    Dark: '#3A3A47' as const,
+    Normal: '#6A0DFB' as const,
+    Light: '#05D8E7' as const,
   },
   Accent: '#FF2B00' as const,
   Base: {
@@ -35,6 +35,13 @@ const Colors = {
     Dark: '#3E00C3' as const,
     Normal: '#4E00F4' as const,
     Light: '#DED1FA' as const,
+  },
+  Background: {
+    Darkest: '#090927',
+    Dark: '#07072C',
+    Light: '#C4CBD2',
+    Lightest: '#EFEFEF',
+
   },
 };
 
