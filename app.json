@@ -37,7 +37,7 @@
       "policy": "sdkVersion"
     },
     "extra": {
-      "base_url":"https://pokeapi.co/api/v2/pokemon/ditto"
+      "base_url":"http://api.innverso.sharkdev.com.br"
     }
   }
 }
