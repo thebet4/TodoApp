@@ -1,10 +1,8 @@
 import styled from 'styled-components/native';
-import { Colors } from '../Theme';
 
 const Caption = styled.Text`
-  font-style: normal;
+  font-family: Inter_700Bold;
   line-height: 17.92px;
-  font-weight: 700;
   font-size: 16px;
 `;
 

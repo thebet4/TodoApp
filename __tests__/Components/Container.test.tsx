@@ -1,10 +1,11 @@
 import renderer from 'react-test-renderer';
+import React from 'react';
 
-const Contianer = require('@app/Ui').default;
+import { Container } from '../../src/Ui/Containers';
 
 describe('<Container />', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(Contianer).toJSON();
+    const tree = renderer.create(<Container />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

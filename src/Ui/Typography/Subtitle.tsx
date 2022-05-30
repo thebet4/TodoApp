@@ -1,11 +1,9 @@
 import styled from 'styled-components/native';
 
 const Subtitle = styled.Text`
-  font-family:Inter;
+  font-family:Inter_600SemiBold;
   font-size: 24px;
   line-height: 36px;
-  font-style: normal;
-  font-weight: 600;
 `;
 
 export default Subtitle;

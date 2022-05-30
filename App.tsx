@@ -1,14 +1,24 @@
 import React from 'react';
 import { ActivityIndicator } from 'react-native';
-import useAppLoader from './src/Shared/hooks/useAppLoader';
-import loadFonts from './src/Shared/loadFonts';
+import {
+  useFonts,
+  Inter_300Light,
+  Inter_400Regular,
+  Inter_600SemiBold,
+  Inter_700Bold,
+} from '@expo-google-fonts/inter';
 import { HomeScreen } from './src/Screens';
 import { Container } from './src/Ui/Containers';
 
 const App = () => {
-  const appLoaded = useAppLoader(loadFonts());
+  const [fontsLoaded] = useFonts({
+    Inter_300Light,
+    Inter_400Regular,
+    Inter_600SemiBold,
+    Inter_700Bold,
+  });
 
-  if (!appLoaded) {
+  if (!fontsLoaded) {
     return <ActivityIndicator />;
   }
 
