@@ -36,3 +36,21 @@ exports[`<Container /> renders correctly 1`] = `
   />
 </RCTSafeAreaView>
 `;
+
+exports[`<ContentContainer /> renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexBasis": "1%",
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "paddingBottom": 24,
+        "paddingLeft": 24,
+        "paddingRight": 24,
+        "paddingTop": 24,
+      },
+    ]
+  }
+/>
+`;
