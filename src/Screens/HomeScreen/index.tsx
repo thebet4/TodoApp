@@ -3,6 +3,7 @@ import {
   ImageBackground, ScrollView, View, Image, FlatList, TouchableOpacity,
 } from 'react-native';
 import * as Linking from 'expo-linking';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { IHomeSettings } from '../../Shared/Interfaces/Screens/settings/HomeSettings';
 import SettingsService from '../../Shared/services/SettingsService';
 import { Button } from '../../Ui/Buttons';
@@ -21,8 +22,11 @@ import Subtitle from '../../Ui/Typography/Subtitle';
 import Title40 from '../../Ui/Typography/Title40';
 import Title56 from '../../Ui/Typography/Title56';
 import { RoadmapDateConteiner, RoadmapItemContainer, SearchFormContainer } from './style';
+import { MainStackParamsList } from '../../Routing/types';
 
-const HomeScreen = () => {
+const HomeScreen = ({
+  navigation,
+}: NativeStackScreenProps<MainStackParamsList, 'HomeScreen'>) => {
   const [infos, setInfos] = React.useState({} as IHomeSettings);
 
   React.useLayoutEffect(() => {
@@ -36,6 +40,10 @@ const HomeScreen = () => {
 
   const _handleWhitePaperDownloadPress = () => {
     Linking.openURL(infos?.value?.whitepaper?.whitepaperFile);
+  };
+
+  const _handleSearchButtonPress = () => {
+    navigation.navigate('HotelsListScreen');
   };
 
   return (
@@ -71,6 +79,7 @@ const HomeScreen = () => {
             <Button
               Label="Pesquisar"
               CustomLeftIcon={SearchIcon}
+              onPress={_handleSearchButtonPress}
             />
           </SearchFormContainer>
 

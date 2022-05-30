@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HotelsListScreen /> renders correctly 1`] = `
+<View>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "Inter_400Regular",
+          "fontSize": 16,
+          "lineHeight": 24,
+        },
+      ]
+    }
+  >
+    HotelsList
+  </Text>
+</View>
+`;

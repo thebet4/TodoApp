@@ -16,7 +16,7 @@ const Container = ({ children }: IContainerProps) => {
       paddingTop: RNStatusBar.currentHeight,
     }}
     >
-      <StatusBar style="auto" />
+      <StatusBar style="dark" />
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       >

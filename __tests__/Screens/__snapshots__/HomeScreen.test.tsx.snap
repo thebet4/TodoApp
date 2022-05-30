@@ -537,7 +537,7 @@ exports[`<HomeScreen /> renders correctly 1`] = `
           <View
             accessible={true}
             collapsable={false}
-            focusable={false}
+            focusable={true}
             onClick={[Function]}
             onResponderGrant={[Function]}
             onResponderMove={[Function]}

@@ -6,7 +6,8 @@ import { HomeScreen } from '../../src/Screens';
 jest.useFakeTimers();
 describe('<HomeScreen />', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(<HomeScreen />).toJSON();
+    const props: any = undefined;
+    const tree = renderer.create(<HomeScreen {...props} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

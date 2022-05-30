@@ -7,8 +7,9 @@ import {
   Inter_600SemiBold,
   Inter_700Bold,
 } from '@expo-google-fonts/inter';
-import { HomeScreen } from './src/Screens';
 import { Container } from './src/Ui/Containers';
+import 'react-native-gesture-handler';
+import { Router } from './src/Routing';
 
 const App = () => {
   const [fontsLoaded] = useFonts({
@@ -24,7 +25,7 @@ const App = () => {
 
   return (
     <Container>
-      <HomeScreen />
+      <Router />
     </Container>
   );
 };
