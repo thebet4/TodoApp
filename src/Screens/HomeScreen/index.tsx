@@ -1,9 +1,10 @@
 import React from 'react';
 import {
-  ImageBackground, ScrollView, View, Image, FlatList, TouchableOpacity,
+  ImageBackground, ScrollView, View, Image, FlatList,
 } from 'react-native';
 import * as Linking from 'expo-linking';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { IHomeSettings } from '../../Shared/Interfaces/Screens/settings/HomeSettings';
 import SettingsService from '../../Shared/services/SettingsService';
 import { Button } from '../../Ui/Buttons';
@@ -12,22 +13,107 @@ import { ContentContainer } from '../../Ui/Containers';
 import { SearchForm } from '../../Ui/Forms';
 import {
   BlockChainIcon,
-  HotelIcon, LogoIcon, LogoWithTextIcon, NFTIcon, SearchIcon,
+  HotelIcon, LogoIcon, NFTIcon, SearchIcon,
 } from '../../Ui/Svgs';
 import { Colors } from '../../Ui/Theme';
 import Body13 from '../../Ui/Typography/Body13';
 import Body16 from '../../Ui/Typography/Body16';
-import Caption from '../../Ui/Typography/Caption';
 import Subtitle from '../../Ui/Typography/Subtitle';
 import Title40 from '../../Ui/Typography/Title40';
 import Title56 from '../../Ui/Typography/Title56';
 import { RoadmapDateConteiner, RoadmapItemContainer, SearchFormContainer } from './style';
 import { MainStackParamsList } from '../../Routing/types';
+import Footer from '../../Ui/Footer';
+import IHotelCardProps from '../../Shared/Interfaces/Components/Cards/HotelCard';
 
 const HomeScreen = ({
   navigation,
 }: NativeStackScreenProps<MainStackParamsList, 'HomeScreen'>) => {
   const [infos, setInfos] = React.useState({} as IHomeSettings);
+
+  const [hotels] = React.useState<IHotelCardProps[]>([
+    {
+      category: 0,
+      name: 'One World',
+      description: '6 diárias \nQuarto \nPassagem Aérea',
+      valueInBrl: '2.999,00',
+      valueInInn: '299',
+      icon: require('./Assets/OneWorldLogo.png'),
+      location: {
+        lat: -21.7826654,
+        lng: -48.1995018,
+      },
+      imageUrl: require('./Assets/OneWorld.jpg'),
+    },
+    {
+      category: 0,
+      name: 'The Mutiny',
+      description: '6 diárias \nQuarto \nPassagem Aérea',
+      valueInBrl: '2.999,00',
+      valueInInn: '299',
+      icon: '',
+      location: {
+        lat: -21.7892489,
+        lng: -48.1849411,
+      },
+      imageUrl: require('./Assets/TheMutiny.jpg'),
+    },
+    {
+      category: 0,
+      name: 'EAST Miami',
+      description: '6 diárias \nQuarto \nPassagem Aérea',
+      valueInBrl: '2.999,00',
+      valueInInn: '299',
+      icon: '',
+      location: {
+        lat: -21.7694771,
+        lng: -48.184801,
+      },
+      imageUrl: require('./Assets/EastMiami.jpg'),
+
+    },
+    {
+      category: 0,
+      name: 'São Paulo Higienópolis Affiliated by Meliá',
+      description: '6 diárias \nQuarto \nPassagem Aérea',
+      valueInBrl: '2.999,00',
+      valueInInn: '299',
+      icon: '',
+      location: {
+        lat: -21.7742755,
+        lng: -48.1769498,
+      },
+      imageUrl: require('./Assets/SpHigienopolis.jpg'),
+
+    },
+    {
+      category: 0,
+      name: 'Comfort Suites Alphaville',
+      description: '6 diárias \nQuarto \nPassagem Aérea',
+      valueInBrl: '2.999,00',
+      valueInInn: '299',
+      icon: '',
+      location: {
+        lat: -21.7742755,
+        lng: -48.1769498,
+      },
+      imageUrl: require('./Assets/Alphaville.jpg'),
+
+    }, {
+      category: 0,
+      name: 'Regency Way Montevideo Hotel',
+      description: '6 diárias \nQuarto \nPassagem Aérea',
+      valueInBrl: '2.999,00',
+      valueInInn: '299',
+      icon: '',
+      location: {
+        lat: -21.7742755,
+        lng: -48.1769498,
+      },
+      imageUrl: require('./Assets/Regency.jpg'),
+
+    },
+  ]);
 
   React.useLayoutEffect(() => {
     (
@@ -74,7 +160,12 @@ const HomeScreen = ({
 
           />
           <SearchFormContainer>
-            <SearchForm />
+            <TouchableWithoutFeedback
+              onPress={_handleSearchButtonPress}
+            >
+
+              <SearchForm />
+            </TouchableWithoutFeedback>
 
             <Button
               Label="Pesquisar"
@@ -143,9 +234,18 @@ const HomeScreen = ({
         contentContainerStyle={{
           paddingHorizontal: 20,
         }}
-        data={[1, 2, 3, 4, 5]}
-        renderItem={() => {
-          return <HotelCard imageUrl={infos?.value?.hotelDestaque?.image?.url} />;
+        data={hotels}
+        renderItem={({ item }) => {
+          return (
+            <HotelCard
+              imageUrl={item.imageUrl}
+              name={item.name}
+              description={item.description}
+              valueInBrl={item.valueInBrl}
+              valueInInn={item.valueInInn}
+              icon=""
+            />
+          );
         }}
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -169,8 +269,8 @@ const HomeScreen = ({
           color={Colors.Primary.Normal}
           style={{ marginTop: 120, marginBottom: 12 }}
         />
+        <Body16 style={{ textAlign: 'center' }}>
 
-        <Body16>
           {infos?.value?.hotelDestaque?.textNFT}
         </Body16>
 
@@ -180,8 +280,8 @@ const HomeScreen = ({
           color={Colors.Primary.Normal}
           style={{ marginTop: 120, marginBottom: 12 }}
         />
+        <Body16 style={{ textAlign: 'center' }}>
 
-        <Body16>
           {infos?.value?.hotelDestaque?.textBuild}
         </Body16>
 
@@ -192,7 +292,7 @@ const HomeScreen = ({
           style={{ marginTop: 120, marginBottom: 12 }}
         />
 
-        <Body16>
+        <Body16 style={{ textAlign: 'center' }}>
           {infos?.value?.hotelDestaque?.textBlock}
         </Body16>
       </ContentContainer>
@@ -322,15 +422,32 @@ const HomeScreen = ({
           textAlign: 'center',
         }}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          O Time da Innverso pode ser considerado um dream team. Engajados,
+          dedicados e especialistas nas funções que atuam
         </Body16>
 
         <FlatList
           style={{ marginTop: 128, marginBottom: 64 }}
-          data={[1, 2, 3, 4]}
-          renderItem={() => {
+          data={[
+            {
+              name: 'Carlo Montova',
+              role: 'Economista',
+              imageUrl: require('./Assets/003.png'),
+            },
+            {
+              name: 'YtiSato Hamashi',
+              role: 'Desenvolvedora',
+              imageUrl: require('./Assets/002.png'),
+            },
+            {
+              name: 'Antônio CA',
+              role: 'CEO',
+              imageUrl: require('./Assets/001.png'),
+            },
+          ]}
+          renderItem={({ item }) => {
             return (
-              <TeamCard />
+              <TeamCard name={item.name} role={item.role} imageUrl={item.imageUrl} />
             );
           }}
           horizontal
@@ -338,84 +455,7 @@ const HomeScreen = ({
         />
       </ContentContainer>
 
-      <ImageBackground
-        source={require('./Assets/HomeFooterBg.png')}
-        style={{ paddingBottom: 64 }}
-      >
-        <View style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
-          marginTop: 92,
-        }}
-        >
-          <View style={{
-            width: '30%',
-            backgroundColor: Colors.Base.Light,
-            height: 1,
-          }}
-          />
-          <Title40 style={{
-            color: Colors.Base.Light,
-            marginHorizontal: 12,
-          }}
-          >
-            Partners
-          </Title40>
-          <View style={{
-            width: '30%',
-            backgroundColor: Colors.Base.Light,
-            height: 1,
-          }}
-          />
-        </View>
-
-        <View style={{
-          alignItems: 'center',
-          justifyContent: 'space-around',
-        }}
-        >
-          <LogoWithTextIcon width={185} height={112} style={{ marginVertical: 24 }} />
-          <LogoWithTextIcon width={185} height={112} style={{ marginVertical: 24 }} />
-          <LogoWithTextIcon width={185} height={112} style={{ marginVertical: 24 }} />
-
-        </View>
-
-        <Subtitle style={{ color: Colors.Base.Light, marginVertical: 24, textAlign: 'center' }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </Subtitle>
-
-        <View style={{ width: '70%', alignSelf: 'center' }}>
-
-          <TouchableOpacity style={{
-            height: 44,
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderWidth: 2,
-            borderColor: Colors.Base.Light,
-            borderRadius: 51,
-            marginBottom: 17,
-          }}
-          >
-            <Caption style={{ color: Colors.Base.Light, fontSize: 18 }}>
-              Acessar
-            </Caption>
-          </TouchableOpacity>
-          <TouchableOpacity style={{
-            height: 44,
-            alignItems: 'center',
-            justifyContent: 'center',
-            borderRadius: 51,
-            backgroundColor: Colors.Base.Light,
-          }}
-          >
-            <Caption style={{ color: Colors.Primary.Normal, fontSize: 18 }}>
-              Abrir Conta
-            </Caption>
-          </TouchableOpacity>
-        </View>
-      </ImageBackground>
-
+      <Footer />
     </ScrollView>
   );
 };

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Image, View } from 'react-native';
+import ITeamCardProps from '../../../Shared/Interfaces/Components/Cards/TeamCard';
 import { Colors } from '../../Theme';
 import Body16 from '../../Typography/Body16';
 import Subtitle from '../../Typography/Subtitle';
 
-const TeamCard = () => {
+const TeamCard = ({ name, imageUrl, role } : ITeamCardProps) => {
   return (
     <View>
       <Image
@@ -15,13 +16,13 @@ const TeamCard = () => {
           width: 312,
           height: 354,
         }}
-        source={require('./Assets/TeamMember.png')}
+        source={imageUrl}
       />
       <Subtitle style={{ color: Colors.Primary.Normal, textAlign: 'center' }}>
-        Lorem Ipsum
+        {name}
       </Subtitle>
       <Body16 style={{ color: Colors.Base.Gray, textAlign: 'center' }}>
-        Lorem Ipsum
+        {role}
       </Body16>
     </View>
   );

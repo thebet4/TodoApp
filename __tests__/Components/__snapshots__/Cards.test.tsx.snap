@@ -8,7 +8,7 @@ exports[`<HotelCard /> renders correctly 1`] = `
         "backgroundColor": "#EFEFEF",
         "borderBottomLeftRadius": 70,
         "borderBottomRightRadius": 70,
-        "height": 494,
+        "height": 500,
         "marginBottom": 71,
         "marginLeft": 20,
         "marginRight": 20,
@@ -19,13 +19,11 @@ exports[`<HotelCard /> renders correctly 1`] = `
   }
 >
   <Image
-    source={
-      Object {
-        "uri": "test",
-      }
-    }
+    resizeMode="cover"
+    source="test"
     style={
       Object {
+        "maxHeight": 240,
         "width": "100%",
       }
     }
@@ -54,7 +52,7 @@ exports[`<HotelCard /> renders correctly 1`] = `
         ]
       }
     >
-      Lorem Ipsum
+       
     </Text>
     <Text
       style={
@@ -70,18 +68,7 @@ exports[`<HotelCard /> renders correctly 1`] = `
           },
         ]
       }
-    >
-      6 diárias
-       
-      
-
-      Quarto
-      
-
-      Passagem Aérea
-      
-
-    </Text>
+    />
     <Text
       style={
         Array [
@@ -96,7 +83,25 @@ exports[`<HotelCard /> renders correctly 1`] = `
         ]
       }
     >
-      R$ 2.999,00
+      INN
+       
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Inter_400Regular",
+            "fontSize": 16,
+            "lineHeight": 24,
+          },
+          Object {
+            "color": "#585858",
+          },
+        ]
+      }
+    >
+      R$
+       
     </Text>
   </View>
 </View>
@@ -105,7 +110,6 @@ exports[`<HotelCard /> renders correctly 1`] = `
 exports[`<TeamCard /> renders correctly 1`] = `
 <View>
   <Image
-    source={1}
     style={
       Object {
         "height": 354,
@@ -129,9 +133,7 @@ exports[`<TeamCard /> renders correctly 1`] = `
         },
       ]
     }
-  >
-    Lorem Ipsum
-  </Text>
+  />
   <Text
     style={
       Array [
@@ -146,8 +148,6 @@ exports[`<TeamCard /> renders correctly 1`] = `
         },
       ]
     }
-  >
-    Lorem Ipsum
-  </Text>
+  />
 </View>
 `;

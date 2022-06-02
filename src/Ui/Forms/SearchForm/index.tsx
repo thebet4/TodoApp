@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import ISearchFormProps from '../../../Shared/Interfaces/Components/Forms/SearchForm';
 import { CalendarIcon, OpenedEyeIcon } from '../../Svgs';
 import { Colors } from '../../Theme';
 import Caption from '../../Typography/Caption';
@@ -7,9 +8,9 @@ import {
   FormContainer, HorizontalDivider, VerticalContainer, VerticalDivider,
 } from './style';
 
-const SearchForm = () => {
+const SearchForm = ({ style }: ISearchFormProps) => {
   return (
-    <FormContainer>
+    <FormContainer style={style}>
       <VerticalContainer>
         <View style={{
           flexDirection: 'row',

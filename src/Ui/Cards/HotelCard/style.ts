@@ -5,7 +5,7 @@ import { Colors } from '../../Theme';
 const CartWidth = Dimensions.get('window').width * 0.8;
 
 export const CardContainer = styled.View`
-  height: 494px;
+  height: 500px;
   width: ${CartWidth}px;
   margin-top: 71px;
   margin-bottom: 71px;

@@ -6,26 +6,34 @@ import Body16 from '../../Typography/Body16';
 import Subtitle from '../../Typography/Subtitle';
 import { CardContainer, CardContentContainer } from './style';
 
-const HotelCard = ({ imageUrl }: IHotelCardProps) => {
+const HotelCard = ({
+  imageUrl, description, name, valueInBrl, valueInInn,
+}: IHotelCardProps) => {
   return (
     <CardContainer>
-      <Image source={{ uri: imageUrl }} style={{ width: '100%' }} />
+      <Image
+        source={imageUrl || require('./Assets/HotelImage.png')}
+        style={{ width: '100%', maxHeight: 240 }}
+        resizeMode="cover"
+      />
       <CardContentContainer>
         <Subtitle style={{ color: Colors.Base.Gray }}>
-          Lorem Ipsum
+          {name}
+          {' '}
         </Subtitle>
         <Body16 style={{ color: Colors.Primary.Normal, marginVertical: 12 }}>
-          6 diárias
-          {' '}
-          {'\n'}
-          Quarto
-          {'\n'}
-          Passagem Aérea
-          {'\n'}
+          {description}
         </Body16>
         <Subtitle style={{ color: Colors.Base.Gray }}>
-          R$ 2.999,00
+          INN
+          {' '}
+          {valueInInn}
         </Subtitle>
+        <Body16 style={{ color: Colors.Base.Gray }}>
+          R$
+          {' '}
+          {valueInBrl}
+        </Body16>
       </CardContentContainer>
     </CardContainer>
   );
