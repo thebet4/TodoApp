@@ -1,10 +1,15 @@
-import renderer from 'react-test-renderer';
-
-const TodoList = require('../../../../src/Ui/Components/TodoList').default;
+import { NativeBaseProvider } from 'native-base';
+import React from 'react';
+import TestRenderer from 'react-test-renderer';
+import { TodoList } from '../../../../src/Ui/Components'
 
 describe('<TodoList />', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(TodoList).toJSON()
+    const tree = TestRenderer.create(
+      <NativeBaseProvider>
+        <TodoList todos={[]} />
+      </NativeBaseProvider>,
+    ).toJSON()
     expect(tree).toMatchSnapshot()
-  });
-});
+  })
+})

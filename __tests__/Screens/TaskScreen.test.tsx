@@ -1,10 +1,16 @@
-import renderer from 'react-test-renderer';
+import TestRenderer from 'react-test-renderer';
+import { NativeBaseProvider } from 'native-base';
 
-const TaskScreen = require('../../src/Screens/TasksScreen').default
+import React from 'react';
+import { TasksScreen } from '../../src/Screens'
 
 describe('<TaskScreen />', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(TaskScreen).toJSON()
+    const tree = TestRenderer.create(
+      <NativeBaseProvider>
+        <TasksScreen />
+      </NativeBaseProvider>,
+    ).toJSON()
     expect(tree).toMatchSnapshot()
   });
 });

@@ -7,8 +7,17 @@ describe('completeTodo hook', () => {
   beforeEach(() => { return mockTodosVar([]) });
 
   it('should mark a todo as completed', () => {
-    mockTodosVar([{ id: 0, text: 'First todo', completed: false }])
-    completeTodo(0);
+    mockTodosVar([{
+      text: 'string',
+      completed: false,
+      id: 0,
+      priority: true,
+      appointmentDate: '',
+      categories: [],
+      comments: [],
+      isRecurring: true,
+    }])
+    completeTodo(0)
 
     expect(
       mockTodosVar()[0].completed,

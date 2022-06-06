@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  ActivityIndicator, StatusBar,
+  StatusBar,
 } from 'react-native';
 import 'react-native-gesture-handler';
 import {
@@ -22,8 +22,8 @@ const App = () => {
 
   return (
     <NativeBaseProvider theme={theme}>
-      <StatusBar backgroundColor={Colors.primary[500]} />
       <ApolloProvider client={client}>
+        <StatusBar backgroundColor={Colors.primary[500]} />
         <Router />
       </ApolloProvider>
     </NativeBaseProvider>

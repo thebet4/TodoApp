@@ -1,10 +1,15 @@
-import renderer from 'react-test-renderer';
-
-const TabBarItem = require('../../../../src/Ui/Components/TabBarItem').default;
+import { NativeBaseProvider, SunIcon } from 'native-base';
+import React from 'react';
+import TestRenderer from 'react-test-renderer';
+import { TabBarItem } from '../../../../src/Ui/Components'
 
 describe('<TabBarItem />', () => {
   it('renders correctly', () => {
-    const tree = renderer.create(TabBarItem).toJSON()
+    const tree = TestRenderer.create(
+      <NativeBaseProvider>
+        <TabBarItem Icon={SunIcon} label="Teste" focused={false} />
+      </NativeBaseProvider>,
+    ).toJSON()
     expect(tree).toMatchSnapshot()
-  });
-});
+  })
+})

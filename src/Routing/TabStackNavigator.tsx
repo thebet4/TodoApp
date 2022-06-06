@@ -5,10 +5,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { CheckCircleIcon } from 'native-base';
 import { TasksScreen } from '../Screens';
 import { TabStackNavigatorParamsList } from './types';
-import { Colors } from '../Ui/Theme';
 import { TabBarItem } from '../Ui/Components';
 import {
-  CalendarIcon, ListIcon, SunIcon, TaskIcon,
+  CalendarIcon, ListIcon, SunIcon,
 } from '../Ui/Sgvs';
 
 const Tab = createBottomTabNavigator<TabStackNavigatorParamsList>();
