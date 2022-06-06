@@ -6,7 +6,7 @@ A React Native app for traking your daily tasks
 
 To make it easy for you to get started with this project, here's a list of recommended next steps.
 
-Already a pro? [let's get down to business](##How to test this project)!
+Already a pro? [let's get down to the businesses](#how-to-test-this-project)
 
 Important, have sure that you environment follow the [correct configurations](https://docs.expo.dev/)
 
@@ -24,7 +24,7 @@ yarn
 ```
   expo start
 ```
-## How to test this project
+# How to test this project
 
 This project uses the default jest configuration, just run:
 ```
