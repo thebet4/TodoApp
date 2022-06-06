@@ -1,8 +1,6 @@
-export type DrawerStackParamsList = {
-  MainStackNavigator: MainStackParamsList
-};
-
-export type MainStackParamsList = {
-  HomeScreen: undefined
-  HotelsListScreen: undefined
+export type TabStackNavigatorParamsList = {
+  MyDayScreen: undefined
+  CalendarScreen: undefined
+  TasksScreen: undefined
+  ListsScreen: undefined
 }

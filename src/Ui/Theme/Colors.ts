@@ -1,47 +1,51 @@
 const Colors = {
-  Primary: {
-    Dark: '#1A0C30' as const,
-    Normal: '#6A0DFB' as const,
-    Light: '#AA00FF' as const,
+  Modes: {
+    Work: '#4355B6' as const,
+    Done: '#FD7246' as const,
   },
-  Secondary: {
-    Dark: '#3A3A47' as const,
-    Normal: '#6A0DFB' as const,
-    Light: '#05D8E7' as const,
+  Tags: {
+    Home: '#B2FFDA' as const,
+    Celebration: '#D3FAA3' as const,
+    Chores: '#FFFF8F' as const,
   },
-  Accent: '#FF2B00' as const,
-  Base: {
-    Dark: '#000000' as const,
-    GrayDarkest: '#131313' as const,
-    GrayDark: '#333333' as const,
-    Gray: '#585858' as const,
-    GrayLight: '#999999' as const,
-    GrayLighter: '#CCCCCC' as const,
-    GrayLightest: '#EFEFEF' as const,
-    GrayWhite: '#F2F2F2' as const,
-    Light: '#FFFFFF' as const,
+  primary: {
+    50: '#e9eeff',
+    100: '#c5cdef',
+    200: '#a1abe0',
+    300: '#7c89d0',
+    400: '#5768c1',
+    500: '#4355B6',
+    600: '#2f3d83',
+    700: '#202c5f',
+    800: '#121a3c',
+    900: '#04081b',
   },
-  Error: {
-    Dark: '#AF0000' as const,
-    Normal: '#DB0000' as const,
-    Light: '#FFC8C8' as const,
+  gray: {
+    50: '#eaf3fc',
+    100: '#d2dadf',
+    200: '#bac0c5',
+    300: '#a0a6ac',
+    400: '#868d93',
+    500: '#4C5257',
+    600: '#535a5f',
+    700: '#3a4045',
+    800: '#22262c',
+    900: '#030e16',
   },
-  Success: {
-    Dark: '#004A19' as const,
-    Normal: '#1F8454' as const,
-    Light: '#4BFCA8' as const,
+  white: {
+    500: '#ffffff',
   },
-  Alert: {
-    Dark: '#3E00C3' as const,
-    Normal: '#4E00F4' as const,
-    Light: '#DED1FA' as const,
-  },
-  Background: {
-    Darkest: '#090927',
-    Dark: '#07072C',
-    Light: '#C4CBD2',
-    Lightest: '#EFEFEF',
-
+  red: {
+    50: '#ffe1e1',
+    100: '#ffb1b1',
+    200: '#ff7f7f',
+    300: '#ff4c4c',
+    400: '#ff1a1a',
+    500: '#DB0000',
+    600: '#b40000',
+    700: '#810000',
+    800: '#500000',
+    900: '#210000',
   },
 };
 

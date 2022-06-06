@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Innverso",
-    "slug": "innverso",
+    "name": "ToDoApp",
+    "slug": "todoapp",
     "owner": "vbtech",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -37,7 +37,6 @@
       "policy": "sdkVersion"
     },
     "extra": {
-      "base_url":"http://api.innverso.sharkdev.com.br"
     }
   }
 }

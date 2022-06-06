@@ -1,8 +1,8 @@
 import React from 'react';
-import DrawerStackNavigator from './DrawerStackNavigator';
+import TabStackNavigator from './TabStackNavigator';
 
 const Router = () => {
-  return <DrawerStackNavigator />;
+  return <TabStackNavigator />;
 };
 
 export default Router;

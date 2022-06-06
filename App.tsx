@@ -1,33 +1,33 @@
 import React from 'react';
-import { ActivityIndicator } from 'react-native';
 import {
-  useFonts,
-  Inter_300Light,
-  Inter_400Regular,
-  Inter_600SemiBold,
-  Inter_700Bold,
-} from '@expo-google-fonts/inter';
-import { Container } from './src/Ui/Containers';
+  ActivityIndicator, StatusBar,
+} from 'react-native';
 import 'react-native-gesture-handler';
+import {
+  NativeBaseProvider, extendTheme,
+} from 'native-base';
+import { ApolloProvider } from '@apollo/client';
+import client from './src/Shared/Operations/config/ApolloConfig';
 import { Router } from './src/Routing';
+import { Colors } from './src/Ui/Theme';
+import { Fonts, FontConfig } from './src/Ui/Typography/Fonts';
 
 const App = () => {
-  const [fontsLoaded] = useFonts({
-    Inter_300Light,
-    Inter_400Regular,
-    Inter_600SemiBold,
-    Inter_700Bold,
+  // Configure Colors and Fonts for the style guide
+  const theme = extendTheme({
+    fontConfig: FontConfig,
+    fonts: Fonts,
+    colors: Colors,
   });
 
-  if (!fontsLoaded) {
-    return <ActivityIndicator />;
-  }
-
   return (
-    <Container>
-      <Router />
-    </Container>
-  );
+    <NativeBaseProvider theme={theme}>
+      <StatusBar backgroundColor={Colors.primary[500]} />
+      <ApolloProvider client={client}>
+        <Router />
+      </ApolloProvider>
+    </NativeBaseProvider>
+  )
 };
 
 export default App;
